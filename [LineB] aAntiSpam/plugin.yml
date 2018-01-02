@@ -1,0 +1,8 @@
+name: aAntiSpam
+main: me.oario.aAntiSpam
+version: 1.2
+description: Sistema de proteção a Spam
+
+commands:
+  aantispam:
+    description: aAntiSpam

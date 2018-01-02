@@ -1,0 +1,31 @@
+name: AntiJoinBot
+description: Checks players for proxies and blocks them
+main: com.certox.Core
+version: 5.0
+authors: LineB
+prefix: AJB
+
+commands:
+ ajb:
+  description: All the AntiJoinBot commands
+permissions:
+ ajb.*:
+  description: Management access
+  default: op
+ children:
+  ajb.reload: true
+  ajb.toggle: true
+  ajb.add: true
+  ajb.bypass: true
+ ajb.reload:
+  description: Reloads configuration and DB connection
+  default: op
+ ajb.toggle:
+  description: Activates/deactivates the plugin
+  default: op
+ ajb.add:
+  description: Adds the given player to the AJB whitelist/blacklist
+  default: op
+ ajb.bypass:
+  description: Allows the player to join without getting checked
+  default: op
