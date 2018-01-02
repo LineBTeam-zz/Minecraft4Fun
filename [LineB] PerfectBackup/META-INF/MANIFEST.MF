@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: . PerfectBackup_lib/spigot-1.9.jar
+Main-Class: me.au2001.PerfectBackup.BackupRestorer
+

@@ -1,0 +1,28 @@
+# Config File
+
+# The plugin's prefix for messages.
+prefix: '&9[&bLineB - Backup&9] &7'
+
+# The reason of the kick when a backup is restored.
+kick: '&9[&bLineB - Backup&9]\n&cO servidor está restaurando um Backup.\nO servidor será reiniciado.'
+
+# The message when an automatic backup started.
+started: 'Backup automático está começando...'
+
+# The message when an automatic backup ended.
+ended: 'Backup automático concluido.'
+
+# The message when an automatic backup failed.
+failed: '&cBackup automático falhou! Sistema de Segurança iniciado!'
+
+# The message when a manual backup started.
+manualstart: 'Um Backup está sendo criado, por favor espere...'
+
+# The message when a manual backup ended.
+manualend: 'Backup concluido com sucesso.'
+
+# The message when a manual backup failed.
+manualfail: '&cBackup automático falhou! Sistema de Segurança iniciado!'
+
+# The message when a player doesn't have permission to use a command.
+permission: '&cVocê não tem permissão para isso.'

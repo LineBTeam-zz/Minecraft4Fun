@@ -1,0 +1,100 @@
+# Config File
+
+# The automatic backup system.
+# Players with permission PerfectBackup.warning will be warned on automatic backup.
+# interval: 2 h
+
+# Interval format:
+# <amount> <t/s/m/h/d>
+# t = Ticks, s = Seconds, m = Minutes, h = Hours, d = Days
+
+crontask: '0 0 4 * * *' # This would make it every day at 4 AM
+
+# CronTask format:
+# * * * * * *
+# | | | | | |
+# | | | | | +–––– Day of the Week   (1-7)
+# | | | | +–––––– Month             (1-12)
+# | | | +–––––––– Day of the Month  (1-31)
+# | | +–––––––––– Hour              (0-23)
+# | +–––––––––––– Minute            (0-59)
+# +–––––––––––––– Second            (0-59)
+
+# A few more examples...
+# crontask: '0 0 * * * *' This would make it every hour
+# crontask: '0 0 4 * * 7' This would make it every sunday at 4 AM
+# crontask: '0 0 4 1 * *' This would make it every first of the month at 4 AM
+
+# The format for backup names.
+# If two backups have the same name, it will append " (1)", " (2)" etc.
+backupformat: '[LineB]Backup {DATE}'
+
+# The format for dates.
+# MM = month, DD = Day, YYYY = Year, HH = 12h Hours, hh = 24h Hours, mm = Minutes, ss = Seconds, ms = Milliseconds, AM = AM/PM
+dateformat: 'MM-DD-YYYY hhh mmm sss' # e.g. 03-10-2016 11h 47m 24s
+
+# Whether the backups should be in a zip file or in a folder.
+zipbackups: true
+
+# The folder where to store the backups locally.
+localpath: 'plugins/PerfectBackup/backups'
+
+# The maximum backups stored. Will delete older backups when reached. (≤ 0 to disable)
+# Note: this will only work with local backups (fallbacks included).
+maxbackups: -1
+
+# Whether or not the plugin should broadcast when automatic backups start/end.
+# If this is set to false, only players with the PerfectBackup.warning permission will see it.
+broadcast: false
+
+# Whether or not the plugin should broadcast when manual backups start/end.
+# If this is set to false, only players with the PerfectBackup.warning permission will see it.
+manualbroadcast: true
+
+# Whether or not you should see detailed information while creating a backup.
+debug: false
+
+# Whether or not the server should be restarted when a backup is restored.
+# This will run the command line "cd dirname" and "java -server -jar jarfile"
+# dirname being the directory to the server and jarfile the first .JAR file found in the server directory
+restorerestart: true
+
+# FTP settings and configuration.
+# Different modes (when to use FTP):
+# - NEVER (disable)
+# - FALLBACK (when an error occurs)
+# - LIMIT (move files when maxbackups is reached)
+# - FIRST (use ftp unless an error occurs)
+# - ALWAYS (only save to ftp, never use local)
+# - BOTH (save to both ftp and local)
+ftp:
+  mode: NEVER
+  host: 'localhost'
+  port: 21
+  user: 'PerfectUser'
+  pass: 'P3rf3c7P455w0rd'
+  path: '~/PerfectBackups/'
+
+# What you want in the backup.
+backup:
+  jarfile: false # The .jar file of your server (e.g. craftbukkit.jar)
+  properties: true # The server.properties file
+  ops: true # The ops.json file
+  whitelist: false # The whitelist.json file
+  spigotyml: true # If on spigot, the spigot.yml file
+  bukkityml: true # The bukkit.yml file
+  aliases: false # The commands.yml file
+  eula: false # The eula.txt file
+  metrics: false # The PluginMetrics folder
+  logs: false # The logs folder, with all the zips (WARNING! This can make your backups way slower and very heavy!)
+  pluginjars: true # The .jar files for the plugins
+  pluginconfs: true # The data folder of each plugin
+  worlds: # Use [] for no world, and - '*' for all the worlds.
+   - 'world'
+   - 'world_nether'
+   - 'world_the_end'
+  other: # Any other file you want to backup, using "!" before will prevent it from backupping (IMPORTANT! Use / for directories!)
+   - 'plugins/PluginMetrics'
+   - '!plugins/Essentials'
+   - '!plugins/WorldEdit'
+   - '!plugins/PerfectBackup/backups'

@@ -1,0 +1,20 @@
+name: PerfectBackup
+main: me.au2001.PerfectBackup.PerfectBackup
+version: 1.6
+author: LineB
+commands:
+  backup:
+    description: Creates a backup.
+    aliases: [pbackup]
+  restore:
+    description: Restores a backup.
+    aliases: [prestore]
+  backups:
+    description: Lists all local backups.
+    aliases: [pbackups]
+  delbackup:
+    description: Deletes a backup.
+    aliases: [rembackup, pdelbackup, prembackup]
+  testftp:
+    description: Tests the FTP connection.
+    aliases: [ptestftp, ptest]
