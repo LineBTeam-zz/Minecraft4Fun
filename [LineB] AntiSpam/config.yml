@@ -1,0 +1,51 @@
+enabled: true
+log-spam: true
+filter-enabled-caps: true
+trigger-enabled-caps: false
+filter-enabled-chars: true
+trigger-enabled-chars: false
+filter-enabled-flood: true
+trigger-enabled-flood: false
+filter-enabled-similar: true
+trigger-enabled-similar: false
+filter-enabled-urls: true
+trigger-enabled-urls: false
+filter-enabled-blacklist: true
+trigger-enabled-blacklist: false
+whitelist-enabled: true
+filter-caps-max: 20
+filter-flood-lock: 1
+filter-lines-similar: 120
+trigger-counter-reset: 300
+trigger-caps:
+ 1:
+  - "/tell {u} &cRespeite as Regras, sem CapsLock:"
+ 2:
+  - "/tell {u} &cRespeite as Regras, sem CapsLock:"
+  - "/eco take {u} 50"
+ 0:
+  - "/tell {u} &cSem CapsLock! você teve o Chat Bloqueado por 5 minutos:"
+  - "/mute {u} 5m"
+trigger-chars:
+ 1:
+  - "/tell {u} &cRespeite as Regras, sem Spam!"
+ 2:
+  - "/tell {u} &cRespeite as Regras, sem Spam!"
+  - "/eco take {u} 50"
+ 0:
+  - "/tell {u} &cSem Spam! Você teve o Chat Bloqueado por 5 minutos:"
+  - "/mute {u} 5m"
+trigger-flood:
+ 0:
+  - "/tell {u} &cRespeite as Regras, sem Spam!"
+  - "/eco take {u} 50"
+trigger-similar:
+ 0:
+  - "/tell {u} &cRespeite as Regras, sem Spam!"
+  - "/eco take {u} 50"
+trigger-urls:
+ 0:
+  - "/tell {u} &cVocê não pode postar URL:"
+trigger-blacklist:
+ 0:
+  - "/tell {u} &cVocê não pode postar essa palavra:"

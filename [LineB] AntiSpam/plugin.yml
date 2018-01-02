@@ -1,0 +1,28 @@
+name: ProSpam
+main: de.rob1n.prospam.ProSpam
+author: LineB
+version: 0.9.97
+
+commands:
+ prospam:
+  description: Manage all the ProSpam settings
+  usage: /prospam
+  permission: prospam.config
+  permission-message: Você não tem permissão para isso.
+
+permissions:
+ prospam.*:
+  description: All permissions
+  children:
+   prospam.config: true
+   prospam.nocheck: true
+   prospam.inform: false
+ prospam.config:
+  description: Manage all the settings
+  default: op
+ prospam.nocheck:
+  description: No spam check
+  default: op
+ prospam.inform:
+  description: Informa sobre violação de spam
+  default: op

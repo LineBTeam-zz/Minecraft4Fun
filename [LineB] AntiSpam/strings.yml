@@ -1,0 +1,5 @@
+filter-lines-similar: "[&o&eLineB - AntiSpam&r] &cSua mensagem foi ignorada:"
+filter-lines-locked: "[&o&eLineB - AntiSpam&r] &6Aguarde um momento antes de mandar outra mensagem:"
+filter-urls-blocked: "<url not whitelisted>"
+blacklist-lines-ignored: "[&o&eLineB - AntiSpam&r] &cSua mensagem foi ignorada por conter palavrão:"
+trigger-information: "&7{0} triggered a filter ({1})"
