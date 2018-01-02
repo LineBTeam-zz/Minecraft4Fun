@@ -1,0 +1,18 @@
+name: ChatClear
+version: 2.4
+main: me.mdrunaway.chatclear.main
+description: A lightwight ChatClear Plugin
+author: [MDRunaway]
+commands:
+  cc:
+    description: Clears the Chat (Default)
+    usage: /<command>
+  chatclear:
+    description: Shows some information about this Plugin
+    usage: /<command>
+  ccm:
+    description: Clears the with random characters
+    usage: /<command>
+  cco:
+    description: Clears the Chat with blank characters
+    usage: /<command>

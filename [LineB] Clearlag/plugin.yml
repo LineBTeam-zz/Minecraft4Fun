@@ -1,0 +1,25 @@
+name: ClearLag
+author: bob7l
+description: Clear your lagg!
+main: me.minebuilders.clearlag.Clearlag
+version: 2.9.3
+commands:
+  lagg:
+    description: Clearlag base command!
+permissions:
+  lagg.clear:
+    description: Permission to clear lag
+  lagg.reload:
+    description: Permission to reload config from disk
+  lagg.check:
+    description: Permission to check
+  lagg.killmobs:
+    description: Permission to kill mobs
+  lagg.unloadchunks:
+    description: Permission to unload chunks
+  lagg.help:
+    description: Permission to see commands
+  lagg.gc:
+    description: Permission gc
+  lagg.tps:
+    description: Permission to see tps
