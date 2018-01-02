@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: jacob
+Class-Path: JDBC-SQLite.jar JDBC-MySQL.jar
+Created-By: Apache Maven
+Build-Jdk: 1.7.0_55
+

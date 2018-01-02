@@ -1,0 +1,117 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.risenphoenix</groupId>
+    <artifactId>IP-Check</artifactId>
+    <version>2.0.7-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>IP-Check</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>GlowStone</groupId>
+            <artifactId>GlowStone</artifactId>
+            <version>92</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>1.11.2</version>
+        </dependency>
+        <dependency>
+            <groupId>RP-Commons</groupId>
+            <artifactId>RP-Commons-SNAPSHOT</artifactId>
+            <version>0.201</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.maxmind.geoip</groupId>
+            <artifactId>geoip-api</artifactId>
+            <version>1.2.12</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>local-repo</id>
+            <url>file:/H:\Maven\repository</url>
+        </repository>
+    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.16</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>RP-Commons:RP-Commons-SNAPSHOT</include>
+                                    <include>com.maxmind.geoip:geoip-api</include>
+                                    <!-- <include>c3p0-local:c3p0-local</include> -->
+                                </includes>
+                                <excludes>
+                                    <exclude>org.bukkit:*</exclude>
+                                    <exclude>GlowStone:*</exclude>
+                                    <exclude>c3p0-local:c3p0-local</exclude>
+                                </excludes>
+                            </artifactSet>
+
+                            <minimizeJar>true</minimizeJar>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
