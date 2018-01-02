@@ -1,0 +1,22 @@
+name: XrayInformer
+version: 3.5.0
+description: Proteção contra hackers
+author: LineB
+main: com.LineB.xrayinformer.XrayInformer
+softdepend: [LogBlock, CoreProtect]
+commands:
+  xcheck:
+    description: Xray check for a given player, enter /xcheck reload to reload the config
+permissions: 
+  xcheck.check:
+    description: Allows the XrayInformer to check players
+    default: true
+  xcheck.receive:
+    description: These members will receive messages when a cheater joins the game, and when ores are broken
+    default: false
+  xcheck.clear:
+    description: These members have the ability to clear a players xcheck rate
+    default: false
+  xcheck.bypasscheck:
+    description: These members will not be auto checked on login
+    default: true
